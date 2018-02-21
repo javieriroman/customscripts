@@ -1,3 +1,3 @@
 #!/bin/bash
 export DEBIAN_FRONTEND=noninteractive
-aptitude -y install mysql-server > /dev/null 2>&1
+apt-get -y install mysql-server 
