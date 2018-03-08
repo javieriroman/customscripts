@@ -11,5 +11,5 @@ cd test_db-master/
 mysql < employees.sql
 mysql  -t < test_employees_md5.sql
 iptables -A input -i eth0 -s 10.0.0.0/24 -p tcp --destination-port 3306 -j ACCEPT
-mysql -e grant all privileges on employees.* to 'javier'@'%' identified by 'Diegoroman@18'
+mysql -e "grant all privileges on employees.* to 'javier'@'%' identified by 'Diegoroman@18'"
 sed -i ‘s/127.0.0.1/10.0.0.5/’ /etc/mysql/mysql.conf.d/mysqld.cnf
