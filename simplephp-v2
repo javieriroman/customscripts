@@ -1,0 +1,30 @@
+<?php
+
+$servername = "mysqlserver";
+$username = "javier";
+$password = "Diegoroman@18";
+$dbname = "employees";
+echo "<h1>Search name is :". $_POST["name"]."</h1>";
+$name = $_POST["name"];
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT emp_no, first_name,last_name FROM employees WHERE first_name =\"$name\"";
+echo $sql;
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "id: " . $row["emp_no"]. " - Name: " . $row["first_name"]. " " . $row["last_name"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+
+mysqli_close($conn);
+?>
