@@ -1,4 +1,4 @@
-<?php
+i<?php
 echo "<table style='border: solid 1px black;'>";
 echo "<tr><th>Id</th><th>Firstname</th><th>Lastname</th></tr>";
 
@@ -20,7 +20,7 @@ class TableRows extends RecursiveIteratorIterator {
     }
 }
 
-$servername = "10.0.0.5";
+$servername = "10.0.0.10";
 $username = "javier";
 $password = "Diegoroman@18";
 $dbname = "employees";
