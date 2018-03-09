@@ -1,0 +1,13 @@
+<html>
+<body>
+<h1>Basic 2 tier apache/php/mysql stack</h1>
+<h2>A Mysql database was imported, name Employees.</h2>
+<h3>Hit submit to search for a name in the employees table to show Id, first_name and last_name.</h3>
+
+<form action="index.php" method="post">
+Name to search: <input type="string" name="name"><br>
+<input type="submit">
+</form>
+
+</body>
+</html>
