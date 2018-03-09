@@ -11,6 +11,10 @@ cd test_db-master/
 mysql < employees.sql
 mysql  -t < test_employees_md5.sql
 iptables -A input -i eth0 -s 10.0.0.0/24 -p tcp --destination-port 3306 -j ACCEPT
+iptables-save > /root/mysql-rules
+set +H
+echo -e "#!/bin/bash \n iptables-restore < /root/mysql-rules \nexit 0" > /etc/rc.local
+set -H
 mysql -e "grant all privileges on employees.* to 'javier'@'%' identified by 'Diegoroman@18'"
 sed -i '/bind-address/c\bind-address=mysqlserver'  /etc/mysql/mysql.conf.d/mysqld.cnf
 service mysql restart
