@@ -8,3 +8,5 @@ curl -0 https://raw.githubusercontent.com/javieriroman/customscripts/master/simp
 apt-get install php libapache2-mod-php -y
 apt-get install php-mysql php-common -y
 service apache2 start
+apt-get install --reinstall php-mysql php-common -y
+service apache2 restart
