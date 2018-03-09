@@ -24,11 +24,12 @@ $servername = "mysqlserver";
 $username = "javier";
 $password = "Diegoroman@18";
 $dbname = "employees";
+$name = $_POST["name"];
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT emp_no, first_name,last_name FROM employees LIMIT 60");
+    $stmt = $conn->prepare("SELECT emp_no, first_name,last_name FROM employees WHERE first_name=\"$name\"");
 
     $stmt->execute();
 
